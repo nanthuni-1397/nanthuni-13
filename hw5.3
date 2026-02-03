@@ -1,0 +1,21 @@
+#include<stdio.h>
+void main()
+{
+ float a,b,c,d,m,n;
+ float x1,x2,denominator;
+ printf("enter the values of a,b,c,d,m and n");
+ scanf("%f%f%f%f%f%f",&a,&b,&c,&d,&m,&n);
+ denominator=a*d-c*b;
+ if (denominator==0)
+ {
+  printf("the denominator is zero\nno unique solution");
+ }
+ else
+ {
+  x1=(m*d-b*n)/denominator;
+  x2=(n*a-m*c)/denominator;
+  printf("the unique solution is :\n")
+  printf("%f\n",x1);
+  printf("%f\n",x2);
+ }
+}
