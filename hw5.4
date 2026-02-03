@@ -1,4 +1,53 @@
-#include<stdio.h>
-void main()
-{
- int count=0;
+#include <stdio.h>
+int main() {
+    int marks;
+    int num_students, students_processed = 0;
+    int count_gt_80 = 0, count_gt_60 = 0, count_gt_40 = 0, count_le_40 = 0;
+    int range_81_100 = 0, range_61_80 = 0, range_41_60 = 0, range_0_40 = 0;
+    printf("Enter number of students\n");
+    scanf("%d", &num_students);
+    printf("Enter marks one by one:\n");
+    while (students_processed < num_students) 
+    {
+        scanf("%d", &marks);
+        students_processed++;
+        
+        if (marks < 0 || marks > 100) 
+        {
+            printf("Invalid marks entered. Please enter marks between 0 and 100.\n");
+            students_processed--;
+            continue;
+        }
+        if (marks > 80)
+        {
+            range_81_100++;
+        } 
+        else if (marks > 60)
+        {
+            range_61_80++;
+        } 
+        else if (marks > 40) 
+        {
+            range_41_60++;
+        }
+        else 
+        {
+            range_0_40++;
+        }
+    }
+    count_gt_80 = range_81_100;
+    count_gt_60 = count_gt_80 + range_61_80;
+    count_gt_40 = count_gt_60 + range_41_60;
+    count_le_40 = range_0_40;
+    printf("\nResults:\n");
+    printf("(a) Students with more than 80 marks: %d\n", count_gt_80);
+    printf("(b) Students with more than 60 marks: %d\n", count_gt_60);
+    printf("(c) Students with more than 40 marks: %d\n", count_gt_40);
+    printf("(d) Students with 40 or less marks: %d\n", count_le_40);
+    printf("(e) Students in the range 81 to 100: %d\n", range_81_100);
+    printf("(f) Students in the range 61 to 80: %d\n", range_61_80);
+    printf("(g) Students in the range 41 to 60: %d\n", range_41_60);
+    printf("(h) Students in the range 0 to 40: %d\n", range_0_40);
+
+    return 0;
+}
