@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() 
+{
+    char str1[100], str2[100];
+    int choice, l, cmp_result;
+
+    printf("1. string length\n2. string copy\n3. string compare\n4. string concatenate\n");
+    printf("enter the choice: ");
+    scanf("%d", &choice);
+    getchar(); // consume the newline left by scanf
+
+    switch (choice)
+    {
+        case 1:
+            printf("enter the string: ");
+            scanf(" %[^\n]", str1); // space before % skips any leftover newline
+            l = strlen(str1);
+            printf("length of the string is %d\n", l);
+            break;
+
+        case 2:
+            printf("enter the string: ");
+            scanf(" %[^\n]", str1);
+            printf("enter another string: ");
+            scanf(" %[^\n]", str2);
+            strcpy(str1, str2);
+            printf("string 1 is %s\n", str1);
+            printf("string 2 is %s\n", str2);
+            break;
+
+        case 3:
+            printf("enter the string: ");
+            scanf(" %[^\n]", str1);
+            printf("enter another string: ");
+            scanf(" %[^\n]", str2);
+            cmp_result = strcmp(str1, str2);
+            printf("comparison result: %d\n", cmp_result);
+            printf("string 1 is %s\n", str1);
+            printf("string 2 is %s\n", str2);
+            break;
+
+        case 4:
+            printf("enter the string: ");
+            scanf(" %[^\n]", str1);
+            printf("enter another string: ");
+            scanf(" %[^\n]", str2);
+            strcat(str1, str2);
+            printf("concatenated string 1 is %s\n", str1);
+            printf("string 2 is %s\n", str2);
+            break;
+
+        default:
+            printf("Invalid choice!\n");
+    }
+    return 0;
+}
