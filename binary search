@@ -1,0 +1,38 @@
+// sreenanda sunil statistics
+#include <stdio.h>
+int main(void) 
+{
+    int arr[] = {44, 55, 66, 77, 88, 99};
+    int target;
+    int size = sizeof(arr) / sizeof(arr[0]);
+    int left = 0;
+    int right = size - 1;
+    int result = -1;
+    printf("Enter the number: ");
+    scanf("%d", &target);
+    while (left <= right)
+    {
+        int mid = left + (right - left) / 2;
+        if (arr[mid] == target)
+        {
+            result = mid;
+            break;
+        }
+        else if (arr[mid] < target)
+        {
+            left = mid + 1;
+        }
+        else
+        {
+            right = mid - 1;
+        }
+    }
+    if (result != -1)
+    {
+        printf("Found at index %d\n", result);
+    }
+    else
+    {
+        printf("Not found\n");
+    }
+}
