@@ -1,0 +1,30 @@
+//sreenanda sunil statistics
+#include <stdio.h>
+void main() 
+{
+    int arr[100], n, target, i, found = 0;
+    int *ptr;
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+    printf("Enter %d elements: ", n);
+    for (i = 0; i < n; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+    printf("Enter element to search: ");
+    scanf("%d", &target);
+    ptr = arr;
+    for (i = 0; i < n; i++) 
+    {
+        if (*(ptr + i) == target) 
+        { 
+            found = 1;
+            printf("Element found at index %d\n", i);
+            break;
+        }
+    }
+    if (found !=1)
+    {
+        printf("Element not found\n");
+    }
+}
