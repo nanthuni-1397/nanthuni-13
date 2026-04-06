@@ -1,0 +1,27 @@
+//sreenanda sunil statistics
+#include <stdio.h>
+int main() 
+{
+    float num1, num2;
+    float *ptr1, *ptr2;
+    float sum, diff, mult, div;
+    ptr1 = &num1;
+    ptr2 = &num2;
+    printf("Enter two numbers: ");
+    scanf("%f %f", ptr1, ptr2);
+    sum  = (*ptr1) + (*ptr2);
+    diff = (*ptr1) - (*ptr2);
+    mult = (*ptr1) * (*ptr2);
+    if (*ptr2 != 0) 
+    {
+        div = (*ptr1) / (*ptr2);
+    } else 
+    {
+        printf("error!\n");
+        div = 0;
+    }
+    printf("\nAddition: %f", sum);
+    printf("\nSubtraction: %f", diff);
+    printf("\nMultiplication: %f", mult);
+    printf("\nDivision: %f\n", div);
+}
