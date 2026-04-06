@@ -1,0 +1,22 @@
+//sreenanda sunil statistics
+#include <stdio.h>
+int fibonacci (int);
+void main() 
+{
+    int terms, i;
+    printf("Enter the number of terms: ");
+    scanf("%d", &terms);
+    printf("Fibonacci Series: ");
+    for (i = 0; i < terms; i++) 
+    {
+        printf("%d ", fibonacci(i));
+    }
+}
+int fibonacci(int n) 
+{
+    if (n <= 1) 
+    {
+        return n;
+    }
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
