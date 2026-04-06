@@ -1,0 +1,37 @@
+//sreenanda sunil statistics
+#include <stdio.h>
+long factorial(int);
+long permutation (int,int);
+long combination (int,int);
+int main()
+{
+    int n, r;
+    printf("Enter values for n and r: ");
+    scanf("%d %d", &n, &r);
+
+    if (n < r) 
+    {
+        printf("Error\n");
+    } 
+    else 
+    {
+        printf("Permutation (nPr): %ld\n",permutation(n, r));
+        printf("Combination (nCr): %ld\n",combination(n, r));
+    }
+
+    return 0;
+}
+long factorial(int n) 
+{
+    if (n == 0 || n == 1)
+        return 1;
+    return n * factorial(n - 1);
+}
+long permutation(int n, int r) 
+{
+    return factorial(n) / factorial(n - r);
+}
+long combination(int n, int r) 
+{
+    return factorial(n) / (factorial(r) * factorial(n - r));
+}
